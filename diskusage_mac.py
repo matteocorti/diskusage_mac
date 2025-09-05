@@ -71,6 +71,8 @@ def get_rows() -> List[Tuple[str, str, str, int, int, int, float]]:
             continue
         if mp.startswith("/System/"):  # hide system helper volumes
             continue
+        if mp.startswith("/Volumes/.time"):
+            continue
         if not os.path.exists(mp):
             continue
         if mp in seen_mps:
